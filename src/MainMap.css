@@ -1,0 +1,41 @@
+.legend{
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+svg{
+  transform: scale(1, -1);
+}
+
+body{
+  background: #333;
+}
+
+g{
+  transition: .7s;
+  cursor: pointer;
+}
+
+g.hide{
+  opacity: .2;
+}
+
+g.hide polyline{
+  stroke-width: 3px;
+}
+
+g.hide circle{
+  stroke-width: 0;
+  r: 4px;
+}
+
+g circle{
+  stroke-width: 3px;
+  r: 8px;
+}
+
+g polyline, g.hide polyline:hover{
+  transition: .3s;
+  stroke-width: 6px;
+}
