@@ -1,6 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import MainMap from './MainMap'
+
+import './reset.css'
+
+import MainMap from './MainMap.jsx'
+
+
 
 ReactDOM.render(
   <React.StrictMode>
