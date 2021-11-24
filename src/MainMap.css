@@ -5,6 +5,8 @@ body{
   justify-content: center;
   align-items: center;
   font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 #000;
 }
 
 svg{
@@ -93,6 +95,7 @@ g.hide:hover polyline {
 .legend .txt {
   font-size: 20px;
   background-color: #222;
+  box-shadow: 1px 1px 2px #000;
   padding: 15px;
   display: inline-block;
   border-radius: 3px;

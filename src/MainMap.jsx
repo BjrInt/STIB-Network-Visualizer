@@ -17,7 +17,7 @@ const MainMap = () => {
   const [displayFilters, setDisplayFilters] = useState({
     METRO: true,
     TRAM: true,
-    BUS: true,
+    BUS: false,
   })
   const [mousePos, setMousePos] = useState({x: null, y:null})
 
@@ -50,6 +50,23 @@ const MainMap = () => {
       </aside>
     }
 
+    { focusedLine.lineId !== undefined && 
+    <aside className="focusedline">
+      <div style={{color: focusedLine.color}}>
+        {focusedLine.type} <div style={{
+          backgroundColor: focusedLine.color,
+          padding: 8,
+          fontSize: '120%',
+          color: '#222',
+          display: 'inline-block',
+          borderRadius: 5
+        }}>{focusedLine.lineId}</div>
+        <div style={{fontSize: '60%', padding: 10}}>
+          {focusedLine.points[0].name[selectedLanguage]} - {focusedLine.points[focusedLine.points.length - 1].name[selectedLanguage]}
+        </div>
+      </div>
+    </aside>
+    }
 
     <section className="options">
       <header>
@@ -123,8 +140,8 @@ const MainMap = () => {
               <circle cx={p.x} 
                       cy={p.y} 
                       r={8} 
-                      stroke="#222" 
-                      strokeWidth="3" 
+                      stroke="#222"
+                      strokeWidth="3"
                       fill={line.color} 
                       key={p.id}
                       onMouseEnter={(e) => {
